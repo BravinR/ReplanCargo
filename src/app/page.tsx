@@ -61,7 +61,7 @@ const HomePage = () => {
             <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
               <Image src={trackingImage} alt="Real-time Tracking" className="w-16 h-16 md:w-24 md:h-24 mx-auto mb-4" />
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 text-center">Real-time Tracking</h3>
-              <p className="text-gray-600 text-center">Stay updated with the latest information on your shipment's progress.</p>
+              <p className="text-gray-600 text-center">Stay updated with the latest information on your shipment&apos;s progress.</p>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
               <Image src={clearanceImage} alt="Customs Clearance" className="w-16 h-16 md:w-24 md:h-24 mx-auto mb-4" />
