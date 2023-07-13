@@ -23,7 +23,7 @@ const Quote = (): JSX.Element => {
         <div className="mx-8 md:mx-60">
             <div>
             <h2 className="text-3xl text-center mt-8 mb-4 font-semibold">Cost Calculation</h2>
-            <p className="text-lg text-center text-gray-500 mx-24">
+            <p className="text-lg text-center text-gray-500 md:mx-24">
                 The shipping cost is calculated based on the volume of the package and the selected unit of measurement. For cubic feet, the rate is $25 per unit volume, while for cubic meters, the rate is $800 per unit volume.
             </p>
             </div>
