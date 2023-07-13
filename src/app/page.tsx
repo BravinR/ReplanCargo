@@ -5,42 +5,17 @@ import realTimeImage from "./../../public/images/schedule.png"
 import doorToDoorImage from "./../../public/images/door-to-door.png"
 import trackingImage from "./../../public/images/tracking.png"
 import logo from "./../../public/images/cargo-ship.png"
+import Footer from './../components/footer';
+import NavBar from './../components/navBar';
 
 const HomePage = () => {
   return (
     <div className="bg-gray-100">
       {/* Header */}
-      <header className="bg-white shadow">
-        <div className="container mx-auto py-4 px-8">
-          {/* Logo */}
-          <div className="flex items-center justify-between">
-            <div className="flex">
-              <Image src={logo} alt="Replan Cargo" className="w-8 mr-4" />
-              <h1 className="mt-1">Replan Cargo</h1>
-            </div>
-            
-            {/* Navigation menu */}
-            <nav className="hidden md:block">
-              <a href="/" className="text-gray-600 hover:text-gray-800">Home</a>
-              <a href="/services" className="text-gray-600 hover:text-gray-800 ml-4">Services</a>
-              <a href="/pricing" className="text-gray-600 hover:text-gray-800 ml-4">Pricing</a>
-              <a href="/about" className="text-gray-600 hover:text-gray-800 ml-4">About Us</a>
-              <a href="/contact" className="text-gray-600 hover:text-gray-800 ml-4">Contact</a>
-            </nav>
-            {/* Mobile navigation */}
-            <div className="md:hidden">
-              <button className="text-gray-600 hover:text-gray-800">
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <NavBar />
 
       {/* Hero Section */}
-      <section className="bg-blue-600 text-white py-16">
+      <section className="bg-blue-900 text-white py-16">
         <div className="container mx-auto px-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Ship from the USA to Kenya with Ease</h1>
           <p className="text-lg md:text-xl lg:text-2xl mb-8">We provide reliable and affordable ocean shipping services from the United States to your doorstep in any part of Kenya</p>
@@ -49,7 +24,7 @@ const HomePage = () => {
       </section>
 
       {/* Services */}
-      <section className="py-16">
+      <section className="py-8">
         <div className="container mx-auto px-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">Our Services</h2>
           <div className="flex flex-wrap -mx-4">
@@ -78,26 +53,35 @@ const HomePage = () => {
       </section>
 
       {/* Contact */}
-      <section className="bg-gray-200 py-16">
+      <section className="bg-blue-900 text-white py-8">
         <div className="container mx-auto px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">Contact Us</h2>
-          <div className="max-w-md mx-auto">
-            <p className="text-center text-gray-600 mb-4">Have questions or need a quote? Get in touch with us!</p>
-            <a href="/contact" className="bg-blue-600 text-white py-2 px-6 rounded-full block text-center font-bold uppercase">Contact Us</a>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">Fill out this form to start shipping from the USA to Kenya hassle-free and see the results.</h2>
+          <div className="mx-auto bg-white rounded-lg overflow-hidden shadow-lg p-8">
+            <form className="mb-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="bg-gray-100 border border-gray-300 rounded py-2 px-4 mb-2 w-full sm:w-2/3 md:mx-44"
+              />
+              <input
+                type="email"
+                placeholder="Your Email Address"
+                className="bg-gray-100 border border-gray-300 rounded py-2 px-4 mb-4 w-full sm:w-2/3 mt-6 md:mt-8 md:mx-44"
+              />
+              <button
+                type="submit"
+                className="bg-blue-500 text-white py-2 px-6 rounded-full block text-center font-bold mx-auto w-2/3 sm:w-auto"
+              >
+                Submit
+              </button>
+            </form>
+            <p className="text-center text-gray-800">Have questions or need a quote? Get in touch with us!</p>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-4">
-        <div className="container mx-auto text-center">
-          <p>&copy; {new Date().getFullYear()} Replan Cargo. All rights reserved.</p>
-          <nav className="mt-2">
-            <a href="/privacy" className="text-gray-600 hover:text-white mx-2">Privacy Policy</a>
-            <a href="/terms" className="text-gray-600 hover:text-white mx-2">Terms of Service</a>
-          </nav>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
