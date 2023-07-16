@@ -7,7 +7,7 @@ const ContactUs = () => {
   const [message, setMessage] = useState('');
   const [state, handleSubmit] = useForm("xnqkqebo");
 
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = async (e:any) => {
     e.preventDefault();
 
     if (state.submitting) {
