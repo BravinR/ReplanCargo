@@ -1,4 +1,6 @@
+"use client"
 import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import Image from 'next/image';
 import clearanceImage from "./../../public/images/custom-clearance.png";
 import realTimeImage from "./../../public/images/schedule.png"
@@ -9,6 +11,58 @@ import Footer from './../components/footer';
 import NavBar from './../components/navBar';
 
 const HomePage = () => {
+  const [state, handleSubmit] = useForm("xnqkqebo");
+
+  const renderForm = () => (
+    <section className="bg-blue-900 text-white py-8">
+      <div className="container mx-auto px-8">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">Fill out this form to start shipping from the USA to Kenya hassle-free and see the results.</h2>
+        <div className="mx-auto bg-white rounded-lg overflow-hidden shadow-lg p-8">
+          <form onSubmit={handleSubmit} className="mb-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="bg-gray-100 border border-gray-300 rounded py-2 px-4 mb-2 w-full sm:w-2/3 md:mx-44 text-black"
+              name="name"
+            />
+            <ValidationError 
+              prefix="Name" 
+              field="name"
+              errors={state.errors}
+            />
+            <input
+              type="email"
+              placeholder="Your Email Address"
+              className="bg-gray-100 border border-gray-300 rounded py-2 px-4 mb-4 w-full sm:w-2/3 mt-6 md:mt-8 md:mx-44 text-black"
+              name="email"
+            />
+            <ValidationError 
+              prefix="Email" 
+              field="email"
+              errors={state.errors}
+            />
+            <button
+              type="submit"
+              className="bg-blue-500 text-white py-2 px-6 rounded-full block text-center font-bold mx-auto w-2/3 sm:w-auto"
+              disabled={state.submitting}
+            >
+              Submit
+            </button>
+          </form>
+          <p className="text-center text-gray-800">Have questions or need a quote? Get in touch with us!</p>
+        </div>
+      </div>
+    </section>
+  );
+
+  const renderSuccessMessage = () => (
+    <section className="bg-blue-900 text-white py-16">
+      <div className="container mx-auto px-8">
+        <p>Thanks!</p>
+      </div>
+    </section>
+  );
+
   return (
     <div className="bg-gray-100">
       {/* Header */}
@@ -53,32 +107,7 @@ const HomePage = () => {
       </section>
 
       {/* Contact */}
-      <section className="bg-blue-900 text-white py-8">
-        <div className="container mx-auto px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">Fill out this form to start shipping from the USA to Kenya hassle-free and see the results.</h2>
-          <div className="mx-auto bg-white rounded-lg overflow-hidden shadow-lg p-8">
-            <form className="mb-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="bg-gray-100 border border-gray-300 rounded py-2 px-4 mb-2 w-full sm:w-2/3 md:mx-44"
-              />
-              <input
-                type="email"
-                placeholder="Your Email Address"
-                className="bg-gray-100 border border-gray-300 rounded py-2 px-4 mb-4 w-full sm:w-2/3 mt-6 md:mt-8 md:mx-44"
-              />
-              <button
-                type="submit"
-                className="bg-blue-500 text-white py-2 px-6 rounded-full block text-center font-bold mx-auto w-2/3 sm:w-auto"
-              >
-                Submit
-              </button>
-            </form>
-            <p className="text-center text-gray-800">Have questions or need a quote? Get in touch with us!</p>
-          </div>
-        </div>
-      </section>
+      {state.succeeded ? renderSuccessMessage() : renderForm()}
 
       {/* Footer */}
       <Footer />
