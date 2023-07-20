@@ -6,7 +6,6 @@ import clearanceImage from "./../../public/images/custom-clearance.png";
 import realTimeImage from "./../../public/images/schedule.png"
 import doorToDoorImage from "./../../public/images/door-to-door.png"
 import trackingImage from "./../../public/images/tracking.png"
-import logo from "./../../public/images/cargo-ship.png"
 import Footer from './../components/footer';
 import NavBar from './../components/navBar';
 
