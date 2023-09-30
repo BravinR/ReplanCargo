@@ -17,7 +17,7 @@ const ServicesPage = () => {
         <NavBar />
   
         {/* Introduction */}
-        <section className="py-16 bg-blue-900 text-white mb-16">
+        <section className="py-12 bg-blue-900 text-white mb-16">
           <div className="container mx-auto px-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">Efficient Shipping Services</h2>
             <p className="text-lg text-center mb-8">At Replan Cargo, we offer a wide range of shipping services to meet your needs. Whether you require door-to-door shipping, real-time tracking, customs clearance, or express delivery, we have you covered. Our logistics solutions streamline your supply chain, and our cargo insurance options provide peace of mind. Explore our services below:</p>
@@ -25,7 +25,7 @@ const ServicesPage = () => {
         </section>
 
         {/* Services */}
-      <section className="py-16">
+      <section className="">
         <div className="container mx-auto px-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">Our Services</h2>
           <div className="flex flex-wrap -mx-4">
@@ -64,12 +64,12 @@ const ServicesPage = () => {
       </section>
   
         {/* Contact */}
-        <section className="bg-gray-200 py-16 mb-16">
+        <section className="200 py-16 mb-12">
           <div className="container mx-auto px-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">Contact Us</h2>
             <div className="max-w-md mx-auto">
               <p className="text-center text-gray-600 mb-4">Have questions or need a quote? Get in touch with us!</p>
-              <a href="/contact" className="bg-blue-600 text-white py-2 px-6 rounded-full block text-center font-bold uppercase">Contact Us</a>
+              <a href="/contact" className="bg-blue-900 text-white py-2 mx-20 rounded-full block text-center font-bold uppercase">Contact Us</a>
             </div>
           </div>
         </section>

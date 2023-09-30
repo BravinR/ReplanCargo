@@ -25,7 +25,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="my-8 mx-8 md:mx-60">
+    <div className="my-8 ml-4 mr-36 md:mx-60">
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
       <form onSubmit={handleFormSubmit} className="max-w-lg mx-auto md:mx-0 md:ml-6">
         <div className="mb-4">
@@ -83,7 +83,7 @@ const ContactUs = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded-md"
+          className="bg-blue-900 text-white py-2 px-4 rounded-md"
           disabled={state.submitting}
         >
           Submit

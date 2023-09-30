@@ -42,7 +42,7 @@ const HomePage = () => {
             />
             <button
               type="submit"
-              className="bg-blue-500 text-white py-2 px-6 rounded-full block text-center font-bold mx-auto w-2/3 sm:w-auto"
+              className="bg-blue-900 text-white py-2 px-6 rounded-full block text-center font-bold mx-auto w-2/3 sm:w-auto"
               disabled={state.submitting}
             >
               Submit

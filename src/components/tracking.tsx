@@ -32,7 +32,7 @@ const Tracking: React.FC = () => {
   };
 
   return (
-    <div className="grid h-64 place-items-center">
+    <div className="grid place-items-center">
       <h1 className="text-3xl text-center font-bold mt-4">Tracking</h1>
       <form onSubmit={handleSubmit} className="">
         <div className="flex mb-4">
@@ -46,14 +46,14 @@ const Tracking: React.FC = () => {
           />
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-r-md"
+            className="bg-blue-900 text-white px-4 py-2 rounded-r-md"
           >
             Track
           </button>
         </div>
       </form>
       {trackingInfo && (
-        <div className="bg-gray-100 p-4 rounded-md">
+        <div className="bg-gray-100 p-4 rounded-md mb-4 mr-4">
           <h2 className="text-lg font-bold mb-2">Tracking Information</h2>
           <p>
             Tracking Number: <strong>{trackingInfo.trackingNumber}</strong>
