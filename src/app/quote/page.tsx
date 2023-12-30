@@ -11,7 +11,8 @@ const Quote = (): JSX.Element => {
     const [quote, setQuote] = useState<number>(0);
 
     const calculateQuote = (): void => {
-        const conversionFactor: number = unit === "feet" ? 1 : 35.3147; // Conversion factor from cubic feet to cubic meters
+        // Conversion factor from cubic feet to cubic meters
+        const conversionFactor: number = unit === "feet" ? 1 : 35.3147;
         const volume: number =
             (Number(length) * Number(width) * Number(height)) /
             conversionFactor;
@@ -37,8 +38,20 @@ const Quote = (): JSX.Element => {
                 <h1 className="text-3xl text-center font-bold mt-8">
                     Get A Quote
                 </h1>
-                <div className="mr-14 ml-4">
-                    <div className="flex flex-col space-y-2">
+                <div className="mr-14 ml-4 lg:mr-44 lg:ml-64">
+                    <div className="flex flex-col space-y-2 mb-2">
+                        <label htmlFor="unit">Unit:</label>
+                        <select
+                            id="unit"
+                            value={unit}
+                            onChange={(e) => setUnit(e.target.value)}
+                            className="border border-gray-300 rounded-md p-2 focus:outline-none"
+                        >
+                            <option value="feet">Feet</option>
+                            <option value="meters">Meters</option>
+                        </select>
+                    </div>
+                    <div className="flex flex-col space-y-2 mb-2">
                         <label htmlFor="length">Length ({unit}):</label>
                         <input
                             id="length"
@@ -48,7 +61,7 @@ const Quote = (): JSX.Element => {
                             className="border border-gray-300 rounded-md p-2"
                         />
                     </div>
-                    <div className="flex flex-col space-y-2">
+                    <div className="flex flex-col space-y-2 mb-2">
                         <label htmlFor="width">Width ({unit}):</label>
                         <input
                             id="width"
@@ -58,7 +71,7 @@ const Quote = (): JSX.Element => {
                             className="border border-gray-300 rounded-md p-2"
                         />
                     </div>
-                    <div className="flex flex-col space-y-2">
+                    <div className="flex flex-col space-y-2 mb-2">
                         <label htmlFor="height">Height ({unit}):</label>
                         <input
                             id="height"
@@ -68,21 +81,9 @@ const Quote = (): JSX.Element => {
                             className="border border-gray-300 rounded-md p-2"
                         />
                     </div>
-                    <div className="flex flex-col space-y-2">
-                        <label htmlFor="unit">Unit:</label>
-                        <select
-                            id="unit"
-                            value={unit}
-                            onChange={(e) => setUnit(e.target.value)}
-                            className="border border-gray-300 rounded-md p-2"
-                        >
-                            <option value="feet">Cubic Feet</option>
-                            <option value="meters">Cubic Meters</option>
-                        </select>
-                    </div>
                     <button
                         onClick={calculateQuote}
-                        className="bg-blue-900 text-white py-2 px-4 rounded-md my-4"
+                        className="bg-blue-900 text-white py-2 px-4 rounded-md mt-4 mb-16"
                     >
                         Calculate Quote
                     </button>
